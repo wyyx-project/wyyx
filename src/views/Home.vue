@@ -1,18 +1,43 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <div class="main">
+      <router-view></router-view>
+    </div>
+    <footer>
+      <Bottom></Bottom>
+    </footer>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
-
+import Bottom from "../components/Bottom";
 export default {
-  name: 'Home',
   components: {
-    HelloWorld
-  }
-}
+    Bottom,
+  },
+};
+// @ is an alias to /src
+// import HelloWorld from '@/components/HelloWorld.vue'
+
+// export default {
+//   name: 'Home',
+//   components: {
+//     HelloWorld
+//   }
+
+// }
 </script>
+
+<style lang="stylus" scoped>
+@import '~@a/stylus/border.styl'
+.home
+  display flex
+  flex-direction column
+  height 100%
+  .main
+    height calc(100% - 0.48rem) 
+    flex 1
+  footer
+    height 0.48rem
+    border_1px(1px 0 0 0)
+</style>
