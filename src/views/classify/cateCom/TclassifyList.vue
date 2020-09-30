@@ -68,3 +68,5 @@ export default {
         ellipsis(100%, 2)
         color #333
 </style>
+
+
