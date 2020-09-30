@@ -22,7 +22,7 @@ html {
 
 body {
   margin: 0;
-  font-size: 0.14em;
+  font-size: 0.14rem;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   font-family: PingFangSC-Regular, Hiragino Sans GB, sans-serif }
@@ -204,10 +204,21 @@ a {
   src: url(//ss.qunarzz.com/yo/font/1.0.3/yofont.woff) format("woff"), url(//ss.qunarzz.com/yo/font/1.0.3/yofont.ttf) format("truetype"); 
 }
 
-/* @font-face {
+@font-face {
+  font-family: yofont;
+  src: url(./icons/t-icon.woff) format("woff"), url(./icons/t-icon.ttf) format("truetype"); 
+}
+
+@font-face {
+  font-family: yofont;
+  src: url(./icons/Gicon.woff) format("woff"), url(./icons/Gicon.ttf) format("truetype"); 
+}
+
+@font-face {
   font-family: yofont;
   src: url(./icons/theater.woff) format("woff"), url(./icons/theater.ttf) format("truetype"); 
-} */
+}
+
 
 .yo-ico {
   font-family: yofont !important;
