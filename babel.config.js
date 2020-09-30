@@ -1,4 +1,3 @@
-var webpack = require('webpack');
 module.exports = {
   // 插件的集合
   presets: [
@@ -10,6 +9,6 @@ module.exports = {
       libraryName: 'vant',
       libraryDirectory: 'es',
       style: true
-    }, 'vant'],
-  ],
+    }, 'vant'] 
+  ]
 }

@@ -4,14 +4,14 @@
   </div>
 </template>
 
+
 <script>
 export default {
-  components: {
-  }
+  
 }
 </script>
 
-<style lang="stylus" scoped>
+<style lang="stylus">
 .container
   height 100%
 </style>
