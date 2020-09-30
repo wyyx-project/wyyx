@@ -1,5 +1,6 @@
 <template>
-  <TdetailsList ></TdetailsList>
+  <div></div>
+  <!-- <TdetailsList ></TdetailsList> -->
 </template>
 
 <script>

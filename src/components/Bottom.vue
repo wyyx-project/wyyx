@@ -6,10 +6,10 @@
           <i :class="['yo-ico','home', {active: $route.matched[1].path === '/Tindex'}]">&#xe60a;</i>
         </template>
       </van-tabbar-item>
-      <van-tabbar-item  to='/Tred' >
-        <span :class="{active: $route.matched[1].path === '/Tred'}">领红包 </span>
+      <van-tabbar-item  to='/TredPacket' >
+        <span :class="{active: $route.matched[1].path === '/TredPacket'}">领红包 </span>
         <template #icon="props">
-          <i :class="['yo-ico','red', {active: $route.matched[1].path === '/Tred'}]">&#xe6a6;</i>
+          <i :class="['yo-ico','red', {active: $route.matched[1].path === '/TredPacket'}]">&#xe6a6;</i>
         </template>
       </van-tabbar-item>
       <van-tabbar-item to='/Tclassify'>
@@ -64,6 +64,9 @@ export default {
       console.log(this);
     }
   } */
+  mounted() {
+    console.log(this.$route);
+  },
 };
 </script>
 

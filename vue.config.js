@@ -21,8 +21,16 @@ module.exports = {
         changeOrigin: true,
         pathRewrite: {
           '^/miniapp': '' // /api/mmdb/movie/v2/list/hot.json -> /mmdb/movie/v2/list/hot.json
+        },
+      },
+      '/api': {
+        // target: 'https://wx.maoyan.com',
+        target: 'https://miniapp.you.163.com', // target host
+        changeOrigin: true, //二级域名 
+        pathRewrite: { //转发地址
+          '^/api': '', // 将/api转化为''中的地址
         }
-      } 
+      }
     }
-  },
+  }
 }

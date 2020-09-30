@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import Bottom from "../components/Bottom";
+import Bottom from "@c/Bottom";
 export default {
   components: {
     Bottom,

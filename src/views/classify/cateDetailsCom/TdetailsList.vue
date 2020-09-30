@@ -19,12 +19,14 @@
 
             <div
               class="promBanner promBanner-10"
-              style='background-image: url("https://yanxuan.nosdn.127.net/c168892ef76f29971032dc1c12613720.png");'
+              
+              :style='"background-image: url(" + item.promBanner.bannerContentUrl + ");"'
               v-if="item.promBanner.valid"
             >
               <div
                 class="promTitle"
-                style='background-image: url("https://yanxuan.nosdn.127.net/d71e2460d062eaa21d5bdf97eba9da89.png");'
+                item.promBanner.bannerTitleUrl
+                :style='"background-image: url(" + item.promBanner.bannerTitleUrl + ");"'
               >
                 <div :class="['activity_title', {activity_titles: !item.promBanner.promoSubTitle}]">
                   <span style="vertical-align: middle;">{{
@@ -98,6 +100,7 @@ export default {
 @import '~@a/stylus/ellipsis.styl'
 
 .t-itemListFloor
+  height 100%
   background-color #fff
   >.hd
     display flex
@@ -108,9 +111,9 @@ export default {
     line-height: 1
     color #333
   .Tlist
+    height calc(100% - 0.56rem)
     display flex
     flex-wrap wrap
-    height max-content
     .item
       width 50%
       padding 0 0.1rem 0 0.05rem
@@ -147,12 +150,16 @@ export default {
           left 0
           bottom 0
           height 0.3rem
-          // padding-top 0.06rem
+          padding-top 0.04rem
           background-repeat no-repeat
+          background-clip content-box
           .promTitle
             float left
+            position relative
+            top -0.06rem
+            left 0
             padding 0 0.08rem
-            height 0.28rem
+            height 0.3rem
             max-width: 3.2rem;
             background-size: auto 100%;
             background-position: right .01333rem;
@@ -179,6 +186,7 @@ export default {
             transform scale(0.9)
             line-height 0.28rem
             padding  0  0.03rem
+            ellipsis(1rem)
       .name
         font-size 0.14rem
         line-height 0.24rem

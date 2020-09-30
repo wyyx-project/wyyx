@@ -7,6 +7,7 @@
       :title="item.name"
       :to="{path:'/TcateDetails', query: { id1: categoryL1Id, id2: item.id}}"
       replace
+      swipeable
     >
       <router-view ></router-view>
     </van-tab>
@@ -81,6 +82,8 @@ export default {
     overflow auto
     .van-tab__pane-wrapper
       background-color rgb(238,238,238)
+      .van-tab__pane
+        height 100%
 </style>
 
 <style lang="stylus">
