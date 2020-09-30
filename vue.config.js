@@ -9,17 +9,16 @@ module.exports = {
       .set('@a', path.resolve(__dirname, './src/assets'))
       .set('@s', path.resolve(__dirname, '/src/store'))
       .set('@r', path.resolve(__dirname, '/src/router'))
-
   },
-  devServer: {
-    proxy: {
-      '/api': {
-        target: 'https://m.you.163.com',
-        changeOrigin: true,
-        pathRewrite: {
-          '^/api': '' // /api/mmdb/movie/v2/list/hot.json -> /mmdb/movie/v2/list/hot.json
-        }
-      } 
-    }
-  },
+  // devServer: {
+  //   proxy: {
+  //     '/api': {
+  //       target: 'https://m.you.163.com',
+  //       changeOrigin: true,
+  //       pathRewrite: {
+  //         '^/api': '' // /api/mmdb/movie/v2/list/hot.json -> /mmdb/movie/v2/list/hot.json
+  //       }
+  //     } 
+  //   }
+  // },
 }

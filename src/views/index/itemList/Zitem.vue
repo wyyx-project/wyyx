@@ -9,8 +9,19 @@
         <div class="conter">
           <img src="https://yanxuan-item.nosdn.127.net/b272a4d8335ad3a80563154e535abf31.jpg?type=webp&imageView&quality=75&thumbnail=750x0" alt="">
           <div class="m-promBanner">
-            <div class="title"><img src="https://yanxuan.nosdn.127.net/0770ea90ff0526062ccab81f02c259ac.png" alt=""></div>
-            <div class="bannerContent"></div>
+            <div class="title"></div>
+            <div class="bannerContent">
+              <div class="col1">
+                <div class="mt12">限时购</div>
+                <div class="mr8">89</div>
+              </div>
+              <div class="status">
+                <div class="col2">
+                  <div class="text">12312312</div>
+                  <div class="text">123123123</div>
+                </div>
+              </div>
+            </div>
           </div>
           <div class="tips"><span>1231231231</span></div>
         </div>
@@ -62,12 +73,48 @@ export default {
     div.title
       width .55rem
       height .6rem
-      
-
-
-
-
-
+      background-image:url("https://yanxuan.nosdn.127.net/0770ea90ff0526062ccab81f02c259ac.png");
+      background-repeat:no-repeat;
+      background-size:100% 100%;
+      border_1px(0 1px 0 0)
+    .bannerContent
+      display flex
+      flex 1
+      padding-right: .2rem
+      background-image url("https://yanxuan.nosdn.127.net/aee487bbec398d6c790d2e2a320da5e6.png")
+      background-size 100% 100%;
+      background-repeat: no-repeat;
+      .col1
+        width 2.1rem
+        height 100%
+        display flex
+        flex-direction column
+        padding-left .08rem
+        .mt12
+          margin-top .08rem
+          font-size .12rem
+          font-weight bold
+          color #fff
+          width 100%
+          height .24rem
+        .mr8
+          flex 1
+          height 100%
+          line-height 100%
+          font-size .24rem
+          font-weight bold
+          color #fff
+      .status
+        display flex
+        flex 1
+        flex-direction row
+        padding .07rem
+        width 100%
+        .col2
+          width 100%
+          .text
+            color #fff
+            width 100%
   div.tips
     background red
     width 100%
@@ -88,12 +135,6 @@ export default {
       text-overflow: ellipsis;
       white-space: nowrap;
       font-weight bold
-
-    
-    
-
-
-  
 </style>
 
 <style lang='stylus'>

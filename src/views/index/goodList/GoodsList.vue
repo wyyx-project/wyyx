@@ -1,7 +1,10 @@
 <template>
   <div class="container">
-    <header-title :title="'商品列表 - 网易严选'"> </header-title>
-    <keep-alive>
+    <van-nav-bar
+        title="网易严选 - 商品列表"
+        left-arrow
+        @click-left="onClickLeft"
+      />
       <div class="banner">
         <main>
           <div class="main">
@@ -44,16 +47,16 @@
           </div>
         </footer>
       </div>
-    </keep-alive>
   </div>
 </template>
 <script>
 import Vue from "vue";
-import { Swipe, SwipeItem, Lazyload } from "vant";
+import { Swipe, SwipeItem, Lazyload, NavBar } from "vant";
 import axios from "axios";
 import { get } from "@u/Zhttp";
 import HeaderTitle from "@c/ZHeader.vue";
 
+Vue.use(NavBar);
 Vue.use(Swipe);
 Vue.use(SwipeItem);
 Vue.use(Lazyload);
@@ -68,7 +71,11 @@ export default {
   components: {
     HeaderTitle,
   },
-  methods: {},
+  methods: {
+    onClickLeft(){
+      this.$router.back()
+    }
+  },
   mounted() {
     axios
       .get("/data/foodBeverage.json")
@@ -210,4 +217,9 @@ export default {
 .van-swipe__indicator--active {
   background: #fff;
 }
+.van-nav-bar .van-icon
+  color #1c1c1c
+.van-nav-bar__title
+  font-size .14rem
+  font-weight bolder
 </style>
