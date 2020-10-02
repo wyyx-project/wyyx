@@ -1,7 +1,7 @@
 <template>
   <div class="top-bar">
       <header class="">
-        <h1>{{topTitle || "推荐专区"}}</h1>
+        <h1>{{topTitle}}</h1>
         <i class="yo-ico" @click="clickHeandler">&#xe506;</i>
       </header>
   </div>
@@ -24,7 +24,7 @@ export default {
   },
   methods: {
     clickHeandler(){
-      history.go(-1)
+      this.$router.back()
     }
   }
 }
@@ -45,6 +45,7 @@ export default {
       text-align center
       font-weight 500
     .yo-ico
+      position relative
       padding-left 0.12rem
       margin-right 0.16rem
       display inline-block

@@ -10,7 +10,7 @@
 import TtopBar from "@c/TtopBar";
 import TtabBar from "@c/TtabBar";
 
-import { getCateDatails } from "@p/Tclassify";
+import { getCategory } from "@p/Tclassify";
 
 export default {
   data() {
@@ -29,37 +29,28 @@ export default {
         size: 40,
       };
     },
-    // activeIndex() {
-    //   return this.categoryL2List.forEach((item, index) => {
-    //     if (item.id === this.categoryL2Id) return index;
-    //   });
-    // },
+    cateParams() {
+      return {
+        categoryId: this.$route.query.id1,
+      };
+    },
   },
   async mounted() {
-    let result = await getCateDatails(this.params);
+    let cateRes = await getCategory(this.cateParams);
     // 头部标题
-    this.topTitle = result.data.title;
+    this.topTitle = cateRes.data.category.name;
     // 分类详细数据
-    this.cateDatails = result.data;
-    this.categoryL2List = result.data.categoryL2List;
-    // console.log(this.categoryL2List);
-    // console.log(this.$route.query.id2);
-    this.categoryL2List.forEach((item, index) => {
+    this.cateDatails = cateRes.data.category.subCategoryList;
+    
+    this.cateDatails.forEach((item, index) => {
       if (item.id == this.$route.query.id2) return (this.activeIndex = index);
     });
-    // console.log(this.activeIndex);
   },
-  // async beforeRouteEnter (to, from, next) {
-  //   // this.categoryL1Id = to.params.id1
-  //   // this.categoryL2Id = to.params.id2
-  //   console.log(to);
-
-  //   // console.log(to.params.id1);
-  // },
   components: {
     TtopBar,
     TtabBar,
   },
+  
 };
 </script>
 

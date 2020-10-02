@@ -30,7 +30,9 @@ export default {
     return {
     };
   },
-  
+  beforeRouteLeave(to, from, next){
+    console.log("真要离开？");
+  },
 };
 </script>
 

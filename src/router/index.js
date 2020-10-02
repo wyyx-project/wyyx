@@ -16,7 +16,7 @@ let Tclassify = () => import( /* webpackChunkName: "Tclassify" */ '@v/classify/c
 let TcateList = () => import( /* webpackChunkName: "TcateList" */ '@v/classify/cateCom/TcateList.vue')
 let TcateDetails = () => import( /* webpackChunkName: "TcateDetails" */ '@v/classify/cateDetailsCom/TcateDetails.vue')
 let TdetailsList = () => import( /* webpackChunkName: "TdetailsList" */ '@v/classify/cateDetailsCom/TdetailsList.vue')
-// let TdetailsItem = () => import( /* webpackChunkName: "TdetailsItem" */ '@v/classify/cateDetailsCom/TdetailsItem.vue')
+let TdetailsItem = () => import( /* webpackChunkName: "TdetailsItem" */ '@v/classify/cateDetailsCom/TdetailsItem.vue')
 // let TtabBar = () => import( /* webpackChunkName: "TtabBar" */ '@c/TtabBar.vue')
 // 购物车页
 let Tcart = () => import( /* webpackChunkName: "Tcart" */ '@v/cart/Tcart.vue')
@@ -77,7 +77,7 @@ const routes = [{
       {
         path: '/TdetailsItem/',
         name: 'TdetailsItem',
-        component: TdetailsList
+        component: TdetailsItem
       },
       // {
       //   path: '/TtabBar/:id1/:id2',
