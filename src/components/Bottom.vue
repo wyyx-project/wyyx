@@ -1,9 +1,9 @@
 <template>
     <van-tabbar route  active-color="#dd1a21" inactive-color="#666" v-model="active">
-      <van-tabbar-item  to='/Tindex'>
-        <span :class="{active: $route.matched[1].path === '/Tindex'}">首页 </span>
+      <van-tabbar-item  to='/shopHome'>
+        <span :class="{active: $route.matched[1].path === '/shopHome'}">首页 </span>
         <template #icon="props">
-          <i :class="['yo-ico','home', {active: $route.matched[1].path === '/Tindex'}]">&#xe60a;</i>
+          <i :class="['yo-ico','home', {active: $route.matched[1].path === '/shopHome'}]">&#xe60a;</i>
         </template>
       </van-tabbar-item>
       <van-tabbar-item  to='/TredPacket' >

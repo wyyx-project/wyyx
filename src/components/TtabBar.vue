@@ -3,7 +3,6 @@
     <van-tab
       v-for="item in cateDatails.categoryL2List"
       :key="item.id"
-      v-if="item.id"
       :title="item.name"
       :to="{path:'/TcateDetails', query: { id1: categoryL1Id, id2: item.id}}"
       replace

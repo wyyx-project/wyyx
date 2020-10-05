@@ -7,7 +7,7 @@ import VueRouter from 'vue-router'
 let Home = () => import( /* webpackChunkName: "home" */ '@v/Home.vue')
 
 // 首页
-let Tindex = () => import( /* webpackChunkName: "Tindex" */ '@v/index/Tindex.vue')
+let shopHome = () => import( /* webpackChunkName: "shopHome" */ '@v/index/shopHome.vue')
 
 // 红包页
 let TredPacket = () => import( /* webpackChunkName: "Tred" */ '@v/redPacket/Tred.vue')
@@ -30,11 +30,11 @@ const routes = [{
     path: '/',
     name: 'Home',
     component: Home,
-    redirect: '/Tindex',
+    redirect: '/shopHome',
     children: [{
-        path: '/Tindex',
-        name: 'Tindex',
-        component: Tindex,
+        path: '/shopHome',
+        name: 'shopHome',
+        component: shopHome,
       },
       {
         path: '/TredPacket',
@@ -108,7 +108,7 @@ const routes = [{
 
 
 const router = new VueRouter({
-    mode: 'hash',
+    mode: 'history',
     routes
 })
 
