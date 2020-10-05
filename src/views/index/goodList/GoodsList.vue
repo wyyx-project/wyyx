@@ -107,8 +107,8 @@ export default {
   overflow-y: scroll;
 
   .banner {
-    height: 10rem;
-    overflow-y: scroll;
+    flex 1
+    overflow-y: scroll
 
     .main {
       background: rgb(241, 241, 241);
