@@ -6,6 +6,7 @@
         :key="index"
         :icon="item.picUrls[0]"
         :text="item.title"
+        @click="handlerClick(item)"
       />
     </van-grid>
   </div>
@@ -28,6 +29,13 @@ export default {
       shophotpic: [],
       loading: true,
     };
+  },
+  methods:{
+    handlerClick(a){
+      let title = a.title
+      console.log(a)
+      this.$router.push({path: '/goodslist', query:{title:a.title}})
+    }
   },
   async mounted() {
     this.loading = false;

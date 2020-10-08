@@ -16,7 +16,7 @@ let Tclassify = () => import( /* webpackChunkName: "Tclassify" */ '@v/classify/c
 let TcateList = () => import( /* webpackChunkName: "TcateList" */ '@v/classify/cateCom/TcateList.vue')
 let TcateDetails = () => import( /* webpackChunkName: "TcateDetails" */ '@v/classify/cateDetailsCom/TcateDetails.vue')
 let TdetailsList = () => import( /* webpackChunkName: "TdetailsList" */ '@v/classify/cateDetailsCom/TdetailsList.vue')
-// let TdetailsItem = () => import( /* webpackChunkName: "TdetailsItem" */ '@v/classify/cateDetailsCom/TdetailsItem.vue')
+let TdetailsItem = () => import( /* webpackChunkName: "TdetailsItem" */ '@v/classify/cateDetailsCom/TdetailsItem.vue')
 // let TtabBar = () => import( /* webpackChunkName: "TtabBar" */ '@c/TtabBar.vue')
 // 购物车页
 let Tcart = () => import( /* webpackChunkName: "Tcart" */ '@v/cart/Tcart.vue')
@@ -26,7 +26,8 @@ let Tpersonal = () => import( /* webpackChunkName: "Tpersonal" */ '@v/personal/T
 
 Vue.use(VueRouter)
 
-const routes = [{
+const routes = [
+  {
     path: '/',
     name: 'Home',
     component: Home,
@@ -60,7 +61,7 @@ const routes = [{
       {
         path: '/Tpersonal',
         name: 'Tpersonal',
-        component: Tpersonal,
+        component: Tpersonal
       },
     ]
   },
@@ -77,7 +78,7 @@ const routes = [{
       {
         path: '/TdetailsItem/',
         name: 'TdetailsItem',
-        component: TdetailsList
+        component: TdetailsItem
       },
       // {
       //   path: '/TtabBar/:id1/:id2',
@@ -91,6 +92,46 @@ const routes = [{
       // }
     ]
   },
+  // {
+  //   path: '/spellGroup',
+  //   name: 'spellGroup',
+  //   redirect: "/spellGroup/spellMall",
+  //   component: () => import('@v/redPacket/spellGroup/spellGroup.vue'),
+  //   children: [
+  //     {
+  //       path:'/spellGroup/spellMall',
+  //       name:'spellMall',
+  //       redirect: {path:'/spellGroup/spellMall/spellList', query: { tabId: 0, categoryId: null}},
+  //       component: () => import('@v/redPacket/spellGroup/spellMall.vue'),
+  //       children:[
+  //         {
+  //           path: '/spellGroup/spellMall/spellList',
+  //           name: 'spellList',
+  //           component: () => import('@v/redPacket/spellGroup/spellList.vue'),
+
+  //         }
+  //       ]
+  //     },
+  //     {
+  //       path:'/spellGroup/myGroup',
+  //       name:'spellGroup/myGroup',
+  //       component: () => import('@v/redPacket/spellGroup/myGroup.vue'),
+  //     }
+  //   ]
+  // },
+  // {
+  //   path: '/search',
+  //   name: 'search',
+  //   redirect: "search/TdetailsList",
+  //   component: () => import('@v/index/search/Tsearch.vue'),
+  //   children: [
+  //     {
+  //       path: '/search/TdetailsList',
+  //       name: 'search/TdetailsList',
+  //       component: TdetailsList
+  //     }
+  //   ]
+  // },
   {
     path: '/goodslist',
     name: 'goodslist',
@@ -99,8 +140,24 @@ const routes = [{
   {
     path: '/goodsDetails',
     name: 'goodsDetails',
-    component: () => import('@v/index/itemList/Zitem.vue')
+    component: () => import('@v/index/itemList/Zitem.vue'),
+    children: [{
+      path: '/TdetailsList/',
+      name: 'TdetailsList',
+      component: TdetailsList
+    },]
   },
+  {
+    path: '/cart',
+    name: 'cart',
+    component: () => import('@v/index/cart/Zcart.vue'),
+    children: [{
+      path: '/cartList',
+      name: 'cartList',
+      component: () =>import('@v/index/cart/ZcartList.vue')
+    },]
+  },
+
   {
     path: '/login',
     name:'login',
@@ -142,7 +199,7 @@ const routes = [{
     component:()=>import(/* webpackChunkName:"group" */ '@v/personal/GComRou/myAccount.vue')
   },
   {
-    path:'/service',
+    path:'rvice',
     name:'service',
     component:()=>import(/* webpackChunkName:"account" */ '@v/personal/GComRou/myService.vue')
   },
@@ -166,6 +223,12 @@ const routes = [{
     name:'addAddress',
     component:()=>import(/* webpackChunkName:"addAddress" */ '@v/personal/GComRou/addAddress.vue')
   }
+
+
+
+
+
+
 ]
 
 
