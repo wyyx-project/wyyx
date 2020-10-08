@@ -29,6 +29,13 @@ module.exports = {
         pathRewrite: { //转发地址
           '^/api': '', // 将/api转化为''中的地址
         }
+      },
+      '/you': {
+        target: 'https://m.you.163.com', // target host
+        changeOrigin: true, //二级域名 
+        pathRewrite: { //转发地址
+          '^/you': '', // 将/api转化为''中的地址
+        }
       }
     }
   }

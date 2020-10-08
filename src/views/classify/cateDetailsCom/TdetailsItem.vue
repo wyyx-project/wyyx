@@ -55,7 +55,6 @@ export default {
     this.params.categoryL2Id = to.query.id2;
     this.$store.state.itemList = [];
     this.loading = true
-    
     this.onLoad()
     next();
   },

@@ -31,7 +31,9 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
+@import '~@a/stylus/border.styl'
 .top-bar
+  border_1px(0 0 1px 0)
   header  
     display flex
     height 0.44rem

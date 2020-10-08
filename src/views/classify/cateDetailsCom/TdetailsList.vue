@@ -1,6 +1,6 @@
 <template>
   <div class="t-itemListFloor" v-if="itemList.length">
-    <header class="hd">
+    <header class="hd" v-if="frontName">
       <p class="desc">
         <span>{{frontName}} </span>
       </p>
@@ -86,7 +86,6 @@
             class="promoLogo"
             src="https://yanxuan.nosdn.127.net/c172998e7fa50cadf020e743c33063f9.png"
           />
-          <!-- :src="item.promLogo.logoUrl" -->
         </div>
       </li>
     </ul>
@@ -124,6 +123,7 @@ export default {
     height calc(100% - 0.56rem)
     display flex
     flex-wrap wrap
+    overflow auto
     .item
       width 50%
       padding 0 0.1rem 0 0.05rem
