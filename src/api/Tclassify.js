@@ -15,6 +15,9 @@ export function getCateDatails(params){
   return http.get('/miniapp/xhr/list/l2Items2.json', params)
 }
 
+export function getCategory(params) {
+  return http.get('/miniapp/xhr/list/subCate.json', params)
+}
 
 
 // let params = {
