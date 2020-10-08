@@ -5,6 +5,7 @@
         left-arrow
         @click-left="onClickLeft"
       />
+      
       <div class="banner">
         <main>
           <div class="main">
@@ -64,6 +65,7 @@ export default {
   data() {
     return {
       // abc: 0,
+      
       images: [],
       goodsModList: [],
     };
@@ -77,8 +79,42 @@ export default {
     }
   },
   mounted() {
+    let url = ''
+    switch (this.$route.query.title){
+      case "服饰鞋包":
+        url = '/data/shoes.json'
+        break
+      case "美食酒水":
+        url = '/data/foodBeverage.json'
+        break
+      case "个护清洁":
+        url = '/data/carePersonal.json'
+        break
+
+      case "居家生活":
+        url = '/data/homeLife.json'
+        break
+
+      case "数码家电":
+        url = '/data/digital.json'
+        break
+
+      case "母婴亲子":
+        url = '/data/mc.json'
+        break
+
+      case "运动旅行":
+        url = '/data/sport.json'
+        break
+
+      case "全球特色":
+        url = '/data/global.json'
+        break
+
+
+    }
     axios
-      .get("/data/foodBeverage.json")
+      .get(url)
       .then((res) => {
         // console.log(res.data.data)
         this.itemList = res.data.data.categoryItemList;
@@ -89,7 +125,6 @@ export default {
         this.itemList.forEach((element) => {
           this.goodsModList.push(element);
         });
-        console.log(this.images);
       })
       .catch((err) => {
         console.log(err);
@@ -107,8 +142,8 @@ export default {
   overflow-y: scroll;
 
   .banner {
-    height: 10rem;
-    overflow-y: scroll;
+    flex 1
+    overflow-y: scroll
 
     .main {
       background: rgb(241, 241, 241);

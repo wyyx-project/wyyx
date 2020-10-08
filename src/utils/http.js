@@ -43,9 +43,9 @@ export default {
    */
   post: function (url, data) {
     return new Promise((resolve, reject) => {
-      axios.post(url, data)
+      axios.post(url,data)
         .then(response => {
-          resolve(response.data)
+          resolve(response)
         }, err => {
           reject(err)
         })

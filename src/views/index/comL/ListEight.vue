@@ -4,7 +4,7 @@
       <van-list
         v-model="loading"
         :finished="finished"
-        finished-text="————更多内容,敬请期待————"
+        finished-text="—————————更多内容,敬请期待————————"
         @load="onLoad"
         class="a-ul"
       >

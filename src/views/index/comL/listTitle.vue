@@ -1,6 +1,6 @@
 <template>
   <div class="list-title" >
-    <van-tabs title-active-color='red' sticky v-model="activeName"  @click="clickHandler">
+    <van-tabs title-active-color='red' sticky @click="clickHandler">
       <van-tab title="猜你喜欢">
         <listone></listone>
       </van-tab>
@@ -13,7 +13,6 @@
       <van-tab title="母婴亲子" name="h"><listeight></listeight></van-tab>
       <van-tab title="全球特色" name="i"><listnine></listnine></van-tab>
     </van-tabs>
-    
   </div>
 </template>
 
@@ -44,8 +43,29 @@ Vue.use(Tabs);
 export default {
   data() {
     return {
-      activeName: 'a',
-      arr: this.arr
+      arr: [
+        {
+          nm:'猜你喜欢'
+        },
+        {
+          nm:'居家生活'
+        },
+        {
+          nm:'美食酒水'
+        },
+        {
+          nm:'个护清洁'
+        },
+        {
+          nm:'数码家电'
+        },
+        {
+          nm:'服饰鞋包'
+        },
+        {
+          nm:'运动旅行'
+        },
+      ]
     };
   },
   methods: {
@@ -70,13 +90,13 @@ export default {
 
 <style lang='stylus' scoped>
 .list-title
-  height 100%
+  height max-content
   .van-tabs--line
-    height 100%
+    height max-content
     .van-tabs__wrap
       height 0.44rem
     .van-tabs__content
-      height calc(100% - 0.44rem)
+      height max-content
       overflow hidden
       overflow-y scroll
 </style>
