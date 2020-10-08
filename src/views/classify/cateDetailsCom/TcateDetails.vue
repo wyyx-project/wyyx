@@ -36,6 +36,7 @@ export default {
     },
   },
   async mounted() {
+    console.log();
     let cateRes = await getCategory(this.cateParams);
     // 头部标题
     this.topTitle = cateRes.data.category.name;
