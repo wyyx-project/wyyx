@@ -114,7 +114,7 @@ export default {
 };
 </script>
 
-<style lang='stylus'>
+<style lang='stylus' scoped>
 @import '~@a/stylus/border.styl';
 @import '~@a/stylus/ellipsis.styl';
 

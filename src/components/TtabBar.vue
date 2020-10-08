@@ -1,6 +1,6 @@
 <template>
-  <van-tabs v-model="active" swipeable animated>
-    <van-tab
+  <van-tabs v-model="active"  animated >
+    <!-- <van-tab
       v-for="item in cateDatails.categoryL2List"
       :key="item.id"
       :title="item.name"
@@ -9,7 +9,18 @@
       swipeable
     >
       <router-view ></router-view>
+    </van-tab> -->
+
+    <van-tab
+     v-for="item in cateDatails"
+    :key="item.id"
+    :title="item.name"
+    :to="{path:'/TdetailsItem', query: { id1: categoryL1Id, id2: item.id}}"
+    replace
+    >
+      <router-view ></router-view>
     </van-tab>
+  
   </van-tabs>
 </template>
 
@@ -17,6 +28,8 @@
 import Vue from "vue";
 import { Tab, Tabs } from "vant";
 import TdetailsItem from "@v/classify/cateDetailsCom/TdetailsItem"
+import { getCateDatails } from "@p/Tclassify";
+
 
 Vue.use(Tab);
 Vue.use(Tabs);
@@ -26,39 +39,24 @@ export default {
   data() {
     return {
       active: 0,
+      itemList:[]
     };
   },
   components: {
     TdetailsItem
   },
   computed: {
-    params() {
-      return {
-        // categoryL1Id: this.id1,
-        // categoryL2Id: this.id2,
-        // size: 20
-      }
-    },
-    // active() {
-    //   return this.activeIndex
-    // }
-  },
-  watch: {
-    activeIndex() {
-      this.active = this.activeIndex - 1
-    }
-  },
-  mounted() {
     
   },
-  async beforeRouteEnter (to, from, next) {
-    // this.categoryL1Id = to.params.id1
-    // this.categoryL2Id = to.params.id2
-    console.log(to);
+  
+  watch: {
+    activeIndex() {
+      this.active = this.activeIndex 
+    }
   },
-  updated() {
-    // console.log(this.cateDatails);
-  },
+  methods: {
+
+  }
 };
 </script>
 

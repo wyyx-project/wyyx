@@ -88,7 +88,7 @@ export default {
 };
 </script>
 
-<style lang='stylus'>
+<style lang='stylus' scoped>
 .list-title
   height max-content
   .van-tabs--line

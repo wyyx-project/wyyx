@@ -30,7 +30,9 @@ export default {
     return {
     };
   },
-  
+  beforeRouteLeave(to, from, next){
+    console.log("真要离开？");
+  },
 };
 </script>
 
@@ -68,3 +70,5 @@ export default {
         ellipsis(100%, 2)
         color #333
 </style>
+
+

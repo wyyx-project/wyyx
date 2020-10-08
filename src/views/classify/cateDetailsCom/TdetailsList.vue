@@ -1,8 +1,8 @@
 <template>
-  <div class="t-itemListFloor">
-    <header class="hd">
+  <div class="t-itemListFloor" v-if="itemList.length">
+    <header class="hd" v-if="frontName">
       <p class="desc">
-        <span>人气好物放心购</span>
+        <span>{{frontName}} </span>
       </p>
     </header>
     <ul class="Tlist">
@@ -11,88 +11,97 @@
           <div class="hd">
             <div class="wraper">
               <img
-                :src="item.listPicUrl+'?type=webp&amp;imageView&amp;quality=65&amp;thumbnail=330x330'"
+                :src="
+                  item.listPicUrl +
+                    '?type=webp&amp;imageView&amp;quality=65&amp;thumbnail=330x330'
+                "
                 alt="lazyload-image"
                 class="swiper-lazy"
               />
             </div>
-
-            <div
-              class="promBanner promBanner-10"
-              
-              :style='"background-image: url(" + item.promBanner.bannerContentUrl + ");"'
-              v-if="item.promBanner.valid"
-            >
+            <div class="promBannerWrap" v-if="item.promBanner">
               <div
-                class="promTitle"
-                item.promBanner.bannerTitleUrl
-                :style='"background-image: url(" + item.promBanner.bannerTitleUrl + ");"'
+                class="promBanner promBanner-10"
+                :style="
+                  'background-image: url(' +
+                    item.promBanner.bannerContentUrl +
+                    ');'
+                "
+                v-if="item.promBanner.valid"
               >
-                <div :class="['activity_title', {activity_titles: !item.promBanner.promoSubTitle}]">
-                  <span style="vertical-align: middle;">{{
-                    item.promBanner.promoTitle
-                  }}</span>
+                <div
+                  class="promTitle"
+                  item.promBanner.bannerTitleUrl
+                  :style="
+                    'background-image: url(' +
+                      item.promBanner.bannerTitleUrl +
+                      ');'
+                  "
+                >
+                  <div
+                    :class="[
+                      'activity_title',
+                      { activity_titles: !item.promBanner.promoSubTitle },
+                    ]"
+                  >
+                    <span style="vertical-align: middle;">{{
+                      item.promBanner.promoTitle
+                    }}</span>
+                  </div>
+                  <div
+                    class="activity_subTitle"
+                    v-if="item.promBanner.promoSubTitle"
+                  >
+                    <span>{{ item.promBanner.promoSubTitle }}</span>
+                  </div>
                 </div>
-                <div class="activity_subTitle" v-if="item.promBanner.promoSubTitle">
-                  <span>{{ item.promBanner.promoSubTitle }}</span>
-                </div>
+                <div class="promContent">{{ item.promBanner.content }}</div>
               </div>
-              <div class="promContent">{{ item.promBanner.content }}</div>
-            </div>
 
-            <div class="desc" v-if="!item.promBanner.valid">{{item.simpleDesc}}</div>
+              <div class="desc" v-if="!item.promBanner.valid">
+                {{ item.simpleDesc }}
+              </div>
+            </div>
           </div>
-          <div
-            class="tagWraper new"
-            v-for="tags in item.itemTagList"
-            :key="tags.tyoe"
-          >
-            <span class=" tag-status-new gradientPrice">{{ tags.name }}</span>
+          <div class="tagWraper new">
+            <span
+              class=" tag-status-new gradientPrice"
+              v-for="tags in item.itemTagList"
+              :key="tags.tyoe"
+              >{{ tags.name }}</span
+            >
           </div>
           <div class="name">{{ item.name }}</div>
           <div class="price">
             <span class="priceInner">
-              <span class="curPrice">¥{{item.activityPrice || item.retailPrice}}</span>
-              <span class="counterPrice">{{ item.activityPrice &&  '¥' + item.retailPrice}}</span>
+              <span class="curPrice"
+                >¥{{ item.activityPrice || item.retailPrice }}</span
+              >
+              <span class="counterPrice">{{
+                item.activityPrice && "¥" + item.retailPrice
+              }}</span>
             </span>
           </div>
           <img
             class="promoLogo"
-            src="https://yanxuan.nosdn.127.net/6018b12bc03e4ef0a1249d7e579877f0.png"
+            src="https://yanxuan.nosdn.127.net/c172998e7fa50cadf020e743c33063f9.png"
           />
         </div>
       </li>
-      
-      
-      
     </ul>
   </div>
 </template>
 
 <script>
-import { getCateDatails } from "@p/Tclassify";
-
 export default {
+  props: ["itemList", "frontName"],
   data() {
-    return {
-      itemList: []
-    };
+    return {};
   },
-  computed: {
-    params() {
-      return {
-        categoryL1Id: this.$route.query.id1,
-        categoryL2Id: this.$route.query.id2,
-        size: 40,
-      };
-    },
-  },
-  async mounted() {
-    // console.log(this.itemList);
-    let result = await getCateDatails(this.params);
-    this.itemList = result.data.itemList
-    // console.log(result);
-  },
+  computed: {},
+  mounted() {
+    
+  }
 };
 </script>
 
@@ -114,6 +123,7 @@ export default {
     height calc(100% - 0.56rem)
     display flex
     flex-wrap wrap
+    overflow auto
     .item
       width 50%
       padding 0 0.1rem 0 0.05rem
@@ -184,9 +194,9 @@ export default {
             color #fff
             font-size 0.1rem
             transform scale(0.9)
-            line-height 0.28rem
+            line-height 0.26rem
             padding  0  0.03rem
-            ellipsis(1rem)
+            // ellipsis()
       .name
         font-size 0.14rem
         line-height 0.24rem
