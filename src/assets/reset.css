@@ -225,7 +225,7 @@ a {
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  vertical-align: middle; }
+  vertical-align: baseline; }
 
 #app {
   height: 100%; }

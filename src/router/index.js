@@ -60,7 +60,7 @@ const routes = [{
       {
         path: '/Tpersonal',
         name: 'Tpersonal',
-        component: Tpersonal
+        component: Tpersonal,
       },
     ]
   },
@@ -100,10 +100,72 @@ const routes = [{
     path: '/goodsDetails',
     name: 'goodsDetails',
     component: () => import('@v/index/itemList/Zitem.vue')
+  },
+  {
+    path: '/login',
+    name:'login',
+    component:() => import(/* webpackChunkName: "index" */ '@v/personal/GComRou/login.vue'),
+  },
+  {
+    path:'/register',
+    name:'register',
+    component:()=>import(/* webpackChunkName: "register" */ '@v/personal/GComRou/register.vue')
+  },
+  {
+    path:'/order',
+    name:'order',
+    component:()=>import(/* webpackChunkName:"order" */ '@v/personal/GComRou/myOrder.vue')
+  },
+  {
+    path:'/group',
+    name:'group',
+    component:()=>import(/* webpackChunkName:"group" */ '@v/personal/GComRou/myGroup.vue')
+  },
+  {
+    path:'/redpacket',
+    name:'redpacket',
+    component:()=>import(/* webpackChunkName:"redpacket" */ '@v/personal/GComRou/myRedpacket.vue')
+  },
+  {
+    path:'/integral',
+    name:'integral',
+    component:()=>import(/* webpackChunkName:"integral" */ '@v/personal/GComRou/myIntegral.vue')
+  },
+  {
+    path:'/address',
+    name:'address',
+    component:()=>import(/* webpackChunkName:"address" */ '@v/personal/GComRou/myAddress.vue'),
+  },
+  {
+    path:'/account',
+    name:'account',
+    component:()=>import(/* webpackChunkName:"group" */ '@v/personal/GComRou/myAccount.vue')
+  },
+  {
+    path:'/service',
+    name:'service',
+    component:()=>import(/* webpackChunkName:"account" */ '@v/personal/GComRou/myService.vue')
+  },
+  {
+    path:'/retroaction',
+    name:'retroaction',
+    component:()=>import(/* webpackChunkName:"feedback" */ '@v/personal/GComRou/myRetroaction.vue')
+  },
+  {
+    path:'/help',
+    name:'help',
+    component:()=>import(/* webpackChunkName:"help" */ '@v/personal/GComRou/myHelp.vue')
+  },
+  {
+    path:'/aftermarket',
+    name:'aftermarket',
+    component:()=>import(/* webpackChunkName:"aftermarket" */ '@v/personal/GComRou/myAftermarket.vue')
+  },
+  {
+    path:'/addAddress',
+    name:'addAddress',
+    component:()=>import(/* webpackChunkName:"addAddress" */ '@v/personal/GComRou/addAddress.vue')
   }
-
-
-
 ]
 
 

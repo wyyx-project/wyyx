@@ -8,6 +8,7 @@ module.exports = {
       .set('@v', path.resolve(__dirname, './src/views'))
       .set('@a', path.resolve(__dirname, './src/assets'))
       .set('@p', path.resolve(__dirname, './src/api/'))
+      .set('@pe', path.resolve(__dirname, './src/personal/'))
   },
 
   // development server
