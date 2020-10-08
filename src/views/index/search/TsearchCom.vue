@@ -1,6 +1,6 @@
 <template>
-  <div class="search-com">
-    <searchBar v-if="itemList.length"></searchBar>
+  <div class="search-com" v-if="itemList.length">
+    <!-- <searchBar v-if="itemList.length" ></searchBar> -->
     <div class="sear-res">
       <router-view :itemList="itemList"></router-view>
     </div>
