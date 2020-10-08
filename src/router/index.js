@@ -92,46 +92,46 @@ const routes = [
       // }
     ]
   },
-  // {
-  //   path: '/spellGroup',
-  //   name: 'spellGroup',
-  //   redirect: "/spellGroup/spellMall",
-  //   component: () => import('@v/redPacket/spellGroup/spellGroup.vue'),
-  //   children: [
-  //     {
-  //       path:'/spellGroup/spellMall',
-  //       name:'spellMall',
-  //       redirect: {path:'/spellGroup/spellMall/spellList', query: { tabId: 0, categoryId: null}},
-  //       component: () => import('@v/redPacket/spellGroup/spellMall.vue'),
-  //       children:[
-  //         {
-  //           path: '/spellGroup/spellMall/spellList',
-  //           name: 'spellList',
-  //           component: () => import('@v/redPacket/spellGroup/spellList.vue'),
+  {
+    path: '/spellGroup',
+    name: 'spellGroup',
+    redirect: "/spellGroup/spellMall",
+    component: () => import('@v/redPacket/spellGroup/spellGroup.vue'),
+    children: [
+      {
+        path:'/spellGroup/spellMall',
+        name:'spellMall',
+        redirect: {path:'/spellGroup/spellMall/spellList', query: { tabId: 0, categoryId: null}},
+        component: () => import('@v/redPacket/spellGroup/spellMall.vue'),
+        children:[
+          {
+            path: '/spellGroup/spellMall/spellList',
+            name: 'spellList',
+            component: () => import('@v/redPacket/spellGroup/spellList.vue'),
 
-  //         }
-  //       ]
-  //     },
-  //     {
-  //       path:'/spellGroup/myGroup',
-  //       name:'spellGroup/myGroup',
-  //       component: () => import('@v/redPacket/spellGroup/myGroup.vue'),
-  //     }
-  //   ]
-  // },
-  // {
-  //   path: '/search',
-  //   name: 'search',
-  //   redirect: "search/TdetailsList",
-  //   component: () => import('@v/index/search/Tsearch.vue'),
-  //   children: [
-  //     {
-  //       path: '/search/TdetailsList',
-  //       name: 'search/TdetailsList',
-  //       component: TdetailsList
-  //     }
-  //   ]
-  // },
+          }
+        ]
+      },
+      {
+        path:'/spellGroup/myGroup',
+        name:'spellGroup/myGroup',
+        component: () => import('@v/redPacket/spellGroup/myGroup.vue'),
+      }
+    ]
+  },
+  {
+    path: '/search',
+    name: 'search',
+    redirect: "search/TdetailsList",
+    component: () => import('@v/index/search/Tsearch.vue'),
+    children: [
+      {
+        path: '/search/TdetailsList',
+        name: 'search/TdetailsList',
+        component: TdetailsList
+      }
+    ]
+  },
   {
     path: '/goodslist',
     name: 'goodslist',
