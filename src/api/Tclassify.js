@@ -15,6 +15,8 @@ export function getCateDatails(params){
   return http.get('/miniapp/xhr/list/l2Items2.json', params)
 }
 
+
+
 // let params = {
 //   categoryL1Id=1010000,
 //   categoryL2Id=1093008,

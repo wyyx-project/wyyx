@@ -99,10 +99,23 @@ const routes = [{
   {
     path: '/goodsDetails',
     name: 'goodsDetails',
-    component: () => import('@v/index/itemList/Zitem.vue')
+    component: () => import('@v/index/itemList/Zitem.vue'),
+    children: [{
+      path: '/TdetailsList/',
+      name: 'TdetailsList',
+      component: TdetailsList
+    },]
+  },
+  {
+    path: '/cart',
+    name: 'cart',
+    component: () => import('@v/index/cart/Zcart.vue'),
+    children: [{
+      path: '/cartList',
+      name: 'cartList',
+      component: () =>import('@v/index/cart/ZcartList.vue')
+    },]
   }
-
-
 
 ]
 

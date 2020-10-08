@@ -29,7 +29,7 @@ module.exports = {
         pathRewrite: { //转发地址
           '^/api': '', // 将/api转化为''中的地址
         }
-      }
+      },
     }
   }
 }
