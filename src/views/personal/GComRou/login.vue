@@ -3,7 +3,7 @@
     <van-nav-bar title="登录" left-arrow @click-left="onClickLeft" />
     <div class="logoWrap" data-reactid=".0.1.0.1.0">
       <img
-        src="//yanxuan.nosdn.127.net/39c5e4583753d4c3cb868a64c2c109ea.png"
+        src="./GComImg/timg.jpg"
         data-reactid=".0.1.0.1.0.0"
       />
     </div>
@@ -13,16 +13,18 @@
         v-model="value1"
         name="pattern"
         label='手机号'
-        placeholder="正则校验"
-        :rules="[{ pattern, message: '请输入正确内容' }]"
+        placeholder="请输入手机号"
+        :rules="[{ pattern, message: '手机号格式不正确' }]"
+        autocomplete="off"
       />
       <!-- 通过 validator 进行函数校验 -->
       <van-field
         v-model="value2"
         name="validator"
         label='密码'
-        placeholder="函数校验"
-        :rules="[{ validator, message: '请输入正确内容' }]"
+        placeholder="请输入密码"
+        :rules="[{ validator, message: '密码格式不正确' }]"
+        autocomplete="off"
       />
       <div style="margin: 16px;">
         <van-button round block type="info" native-type="submit" @click='loginHandler'>
@@ -87,8 +89,9 @@ export default {
         let phone=this.value1;
         let password=this.value2;
         let res=await http.post('http://10.9.65.210:8090/admin/user/login',{phone,password});
-        window.alert('你好'+res.phone+'登录成功');
-        window.localStorage.setItem('info', JSON.stringify(res));
+        console.log(res)
+        window.alert('你好'+res.data.data.phone+'登录成功');
+        window.localStorage.setItem('info', JSON.stringify(res.data.data));
         this.$router.push('/Tpersonal')
       }
     },
@@ -106,8 +109,8 @@ export default {
     padding-top 1rem
     padding-bottom 1rem
     img 
-      width: 1.25rem;
-      height: 0.6rem;
+      width: 2.5rem;
+      height: 1.25rem;
 .van-button
   width 50%
   float left

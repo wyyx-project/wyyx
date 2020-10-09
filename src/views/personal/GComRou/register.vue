@@ -4,7 +4,7 @@
 
     <div class="logoWrap" data-reactid=".0.1.0.1.0">
       <img
-        src="//yanxuan.nosdn.127.net/39c5e4583753d4c3cb868a64c2c109ea.png"
+        src="./GComImg/timg.jpg"
         data-reactid=".0.1.0.1.0.0"
       />
     </div>
@@ -14,23 +14,26 @@
         v-model="value1"
         name="pattern"
         label='手机号'
-        placeholder="正则校验"
-        :rules="[{ pattern, message: '请输入正确内容' }]"
+        placeholder="请输入手机号"
+        :rules="[{ pattern, message: '请输入正确的手机号' }]"
+        autocomplete="off"
       />
       <!-- 通过 validator 进行函数校验 -->
       <van-field
         v-model="value2"
         name="validator"
         label='密码'
-        placeholder="密码必须包含字母大小写和数字"
-        :rules="[{ validator, message: '请输入正确内容' }]"
+        placeholder="请输入密码"
+        :rules="[{ validator, message: '密码必须包含大小写和数字' }]"
+        autocomplete="off"
       />
       <van-field
         v-model="value3"
         name="validator"
         label='再次输入密码'
-        placeholder="函数校验"
-        :rules="[{ validator, message: '请输入正确内容' }]"
+        placeholder="请再次输入密码"
+        :rules="[{ validator, message: '' }]"
+        autocomplete="off"
       />
       <button class="regis-bto" @click='clickRegister'>注册</button>
     </van-form>
@@ -80,27 +83,26 @@ export default {
     },
     onFailed(errorInfo) {
       console.log('failed', errorInfo);
-      window.alert('格式不正确，请重新输入')
+      window.alert('格式不正确，请重新输入');
     },
     async clickRegister(){
-      if(this.value2 === this.value3){
-        // let xhr=XMLHttpRequest();
-        // xhr.open('post','http://10.9.65.210:8090/admin/user/registered');
-        // xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
-        // xhr.send('')
-        
-        let obj={
-          phone:this.value1,
-          password:this.value2
-        }      
-        let res = await http.post('http://10.9.65.210:8090/admin/user/registered',obj)
-        console.log(obj);
-        console.log(res);
-        // console.log('充公');
-        window.alert('注册成功');
-        this.$router.push('/login')
-      }else{
+      let phone=/^1[0-9]{10}$/.test(this.value1);
+      let password=/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[^]{8,16}$/.test(this.value2);
+      let repassword=/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[^]{8,16}$/.test(this.value3);
+      if(phone){
+        if(password && repassword && this.value2===this.value3){
+          let obj={
+            phone:this.value1,
+            password:this.value2
+          }      
+          let res = await http.post('http://10.9.65.210:8090/admin/user/registered',obj)
+          console.log(obj);
+          // console.log('充公');
+          window.alert('注册成功');
+          this.$router.push('/login')
+      }else{  
         window.alert('两次输入的密码不一致')
+      }
       }
     }
   },
@@ -114,8 +116,8 @@ export default {
     padding-top 1rem
     padding-bottom 1rem
     img 
-      width: 1.25rem;
-      height: 0.6rem;
+      width: 2.5rem;
+      height: 1.25rem;
 .van-button
   width 50%
   float left

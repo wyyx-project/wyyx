@@ -56,7 +56,7 @@ const routes = [
       {
         path: '/Tcart',
         name: 'Tcart',
-        component: Tcart
+        component: () => import('@v/index/cart/Zcart.vue'),
       },
       {
         path: '/Tpersonal',
