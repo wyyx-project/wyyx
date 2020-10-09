@@ -18,10 +18,10 @@
           <i :class="['yo-ico','classify', {active: $route.matched[1].path === '/Tclassify'}]">&#xe609;</i>
         </template>
       </van-tabbar-item>
-      <van-tabbar-item to='/Tcart'>
-        <span :class="{active: $route.matched[1].path === '/Tcart'}">购物车</span>
+      <van-tabbar-item to='/cart'>
+        <span :class="{active: $route.matched[1].path === '/cart'}">购物车</span>
         <template #icon="props">
-          <i :class="['yo-ico','cart', {active: $route.matched[1].path === '/Tcart'}]">&#xe600;</i>
+          <i :class="['yo-ico','cart', {active: $route.matched[1].path === '/cart'}]">&#xe600;</i>
         </template>
       </van-tabbar-item>
       <van-tabbar-item to='/Tpersonal'>

@@ -24,7 +24,6 @@
       <list-title></list-title>
     </div>
 
-    <back-top></back-top>
     <footer>
       <tabBar @select-item="onClickTabBarItem" />
     </footer>
