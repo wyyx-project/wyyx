@@ -1,10 +1,14 @@
 <template>
   <div>
-    联系客服
+        <van-nav-bar title="联系客服" left-arrow @click-left="onClickLeft" />
+
   </div>
 </template>
 
 <script>
+import Vue from "vue";
+import { NavBar } from "vant";
+Vue.use(NavBar)
 export default {
   data() {
     return {
@@ -12,7 +16,9 @@ export default {
     }
   },
   methods: {
-
+    onClickLeft(){
+      this.$router.push('/Tpersonal')
+    },
   },
   components: {
 

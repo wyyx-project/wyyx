@@ -223,12 +223,6 @@ const routes = [
     name:'addAddress',
     component:()=>import(/* webpackChunkName:"addAddress" */ '@v/personal/GComRou/addAddress.vue')
   }
-<<<<<<< HEAD
-=======
-
-
-
->>>>>>> tianjinhao
 
 
 

@@ -1,10 +1,13 @@
   <template>
   <div>
-    领红包
+        <van-nav-bar title="领红包" left-arrow @click-left="onClickLeft" />
   </div>
 </template>
 
 <script>
+import Vue from "vue";
+import { NavBar } from "vant";
+Vue.use(NavBar)
 export default {
   data() {
     return {
@@ -12,7 +15,9 @@ export default {
     }
   },
   methods: {
-
+    onClickLeft(){
+      this.$router.push('/Tpersonal')
+    },
   },
   components: {
 

@@ -4,7 +4,7 @@
 
     <div class="logoWrap" data-reactid=".0.1.0.1.0">
       <img
-        src="//yanxuan.nosdn.127.net/39c5e4583753d4c3cb868a64c2c109ea.png"
+        src="./GComImg/timg.jpg"
         data-reactid=".0.1.0.1.0.0"
       />
     </div>
@@ -14,7 +14,7 @@
         v-model="value1"
         name="pattern"
         label='手机号'
-        placeholder="正则校验"
+        placeholder="请输入手机号"
         :rules="[{ pattern, message: '请输入正确内容' }]"
       />
       <!-- 通过 validator 进行函数校验 -->
@@ -22,15 +22,15 @@
         v-model="value2"
         name="validator"
         label='密码'
-        placeholder="密码必须包含字母大小写和数字"
-        :rules="[{ validator, message: '请输入正确内容' }]"
+        placeholder="请输入密码"
+        :rules="[{ validator, message: '密码必须包含字母大小写和数字' }]"
       />
       <van-field
         v-model="value3"
         name="validator"
         label='再次输入密码'
-        placeholder="函数校验"
-        :rules="[{ validator, message: '请输入正确内容' }]"
+        placeholder="再次输入密码"
+        :rules="[{ validator, message: '两次输入的密码不一致' }]"
       />
       <button class="regis-bto" @click='clickRegister'>注册</button>
     </van-form>
@@ -111,11 +111,11 @@ export default {
 <style lang='stylus' scoped>
 .logoWrap
     text-align center
-    padding-top 1rem
-    padding-bottom 1rem
+    padding-top .5rem
+    padding-bottom .5rem
     img 
-      width: 1.25rem;
-      height: 0.6rem;
+      width: 2.5rem;
+      height: 1.25rem;
 .van-button
   width 50%
   float left
