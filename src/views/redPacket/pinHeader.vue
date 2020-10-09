@@ -5,9 +5,9 @@
       <div class="receive">
         领签到红包
       </div>
-      <div>
+      <!-- <div>
         定时奖励
-      </div>
+      </div> -->
     </header>
     <div class="accountWrap">
       <div class="my-account">
