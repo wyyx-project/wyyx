@@ -1,4 +1,4 @@
- <template>
+<template>
   <div>
     <div class="aaa">
       <van-list
@@ -14,13 +14,12 @@
               <img :src="value.categoryItem.listPicUrl" class="a-img" />
               <div
                 class="if-exsit"
-                v-if="
-                  value.categoryItem.promBanner.promoTitle &&
-                  value.categoryItem.promBanner.content
+                v-if="                 
+                  value.categoryItem.promBanner
                 "
               >
                 <span>
-                  {{ value.categoryItem.promBanner.promoTitle }}
+                  <!-- {{ value.categoryItem.promBanner.promoTitle }} -->
                 </span>
                 <p>
                   {{ value.categoryItem.promBanner.content }}
@@ -68,15 +67,17 @@ export default {
   methods: {
     async loadData() {
       let listA = await http.get(
-              "/api/xhr/rcmd/indexV2.json?type=2&size=22&lastItemId=0&categoryId=1005002"
-      );
+"/api/xhr/rcmd/indexV2.json?type=2&size=22&lastItemId=0&categoryId=1005002"      );
+      console.log(listA);
       listA.data.rcmdItemList.forEach((value) => {
-        if (value.categoryItem && value.categoryItem.promBanner.content) {
+        if (value.categoryItem) {
           if(value.categoryItem.comments[0]){
             this.listB.push(value);
           }
         }
-      }); 
+        console.log(this.listB);
+      });
+      // console.log(this.listB); 
       let page=Math.ceil(this.listB.length/this.limit)
       // console.log(page);
       setTimeout(()=>{
@@ -86,13 +87,13 @@ export default {
           this.list.push(this.listB[i*this.limit+j])
           }
         }
+        // console.log(this.list);
         this.loading=false;
         if(this.list.length===this.listB.length){
           this.finished=true
         }
        }
       },1000)
-      //  console.log(this.list);
      },
     onLoad() {
       this.loadData();
@@ -217,4 +218,3 @@ export default {
   }
 }
 </style>
-
