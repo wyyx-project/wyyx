@@ -113,7 +113,7 @@ export default {
     },
     async onInput(value) {
       if (value === "") {
-        console.log(0);
+        
         this.keywordList = [];
       } else {
         this.keywordList = [];

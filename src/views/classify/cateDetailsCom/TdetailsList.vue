@@ -6,7 +6,7 @@
       </p>
     </header>
     <ul class="Tlist">
-      <li class="item" v-for="item in itemList" :key="item.id">
+      <router-link tag="li" :to="{ name: 'goodsDetails', query: { id: item.id } }" class="item" v-for="item in itemList" :key="item.id">
         <div class="good">
           <div class="hd">
             <div class="wraper">
@@ -87,7 +87,7 @@
             src="https://yanxuan.nosdn.127.net/c172998e7fa50cadf020e743c33063f9.png"
           />
         </div>
-      </li>
+      </router-link>
     </ul>
   </div>
 </template>
