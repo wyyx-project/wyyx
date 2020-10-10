@@ -65,7 +65,7 @@ export default {
         this.$store.state.itemList = [];
       }
       let result = await getCateDatails(this.params);
-
+      console.log(result);
       let frontRes = await getCategory(this.cateParams);
       let subCategoryList = frontRes.data.category.subCategoryList
 
