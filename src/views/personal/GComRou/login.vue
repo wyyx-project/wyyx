@@ -80,7 +80,7 @@ export default {
       });
     },
     onFailed(errorInfo) {
-      console.log('failed', errorInfo);
+      // console.log('failed', errorInfo);
     },
     async loginHandler(){
       if(this.value1==="" || this.value2===""){
@@ -89,7 +89,7 @@ export default {
         let phone=this.value1;
         let password=this.value2;
         let res=await http.post('http://10.9.65.210:8090/admin/user/login',{phone,password});
-        console.log(res)
+        // console.log(res)
         window.alert('你好'+res.data.data.phone+'登录成功');
         window.localStorage.setItem('info', JSON.stringify(res.data.data));
         this.$router.push('/Tpersonal')

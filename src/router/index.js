@@ -69,11 +69,7 @@ const routes = [{
     name: 'TcateDetails',
     component: TcateDetails,
     redirect: '/TdetailsItem/',
-    children: [{
-        path: '/TdetailsList/',
-        name: 'TdetailsList',
-        component: TdetailsList
-      },
+    children: [
       {
         path: '/TdetailsItem/',
         name: 'TdetailsItem',

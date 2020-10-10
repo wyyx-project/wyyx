@@ -118,11 +118,13 @@ export default {
 .t-itemListFloor
   height 100%
   background-color #fff
+  margin-top 0.1rem
+  padding-top 0.1rem
   >.hd
     display flex
     justify-content center
     align-items center
-    margin-top 0.1rem
+    // margin-top 0.1rem
     height 0.56rem
     line-height: 1
     color #333

@@ -8,7 +8,7 @@
         @load="onLoad"
         class="a-ul"
       >
-        <li v-for="value in list" :key="value.id">
+        <router-link tag="to" v-for="value in list" :key="value.id" :to="{ name: 'goodsDetails', query: { id: value.id } }">
           <div class="a-totalList">
             <div class="a-list">
               <img :src="value.categoryItem.listPicUrl" class="a-img" />
@@ -41,7 +41,7 @@
               </div>
             </div>
           </div>
-        </li>
+        </router-link>
       </van-list>
     </div>
   </div>

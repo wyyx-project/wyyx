@@ -93,6 +93,7 @@ export default {
     // this.active = 
     let spellRes = await getSpellList(this.params);
     this.spellList = spellRes.data.result;
+    // console.log(this.spellList);
     // if(this.$route.query.tabId) {
     //   this.active = 
     // }

@@ -39,15 +39,15 @@ export default {
         },
         {
           id: 1002,
-          text: "我的拼团",
+          text: "周六一起拼",
           photo: require("./PerImg/wodepintuan.png"),
-          to:'/group'
+          to:'/spellGroup/spellMall'
         },
         {
           id: 1003,
           text: "领红包",
           photo: require("./PerImg/qiandaolinghongbao.png"),
-          to:'/redpacket'
+          to:'/TredPacket'
         },
         {
           id: 1004,

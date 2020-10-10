@@ -35,6 +35,7 @@ export default {
     let indexRes = await getIndexList(this.params)
     let recommendRes = await getRecommend()
     this.indexList = indexRes.data.result
+    // console.log(this.indexList);
     this.avatars = recommendRes.data.avatars
   }
 }

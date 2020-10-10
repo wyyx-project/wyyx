@@ -82,7 +82,7 @@ export default {
       });
     },
     onFailed(errorInfo) {
-      console.log('failed', errorInfo);
+      // console.log('failed', errorInfo);
       window.alert('格式不正确，请重新输入');
     },
     async clickRegister(){
@@ -96,7 +96,7 @@ export default {
             password:this.value2
           }      
           let res = await http.post('http://10.9.65.210:8090/admin/user/registered',obj)
-          console.log(obj);
+          // console.log(obj);
           // console.log('充公');
           window.alert('注册成功');
           this.$router.push('/login')
