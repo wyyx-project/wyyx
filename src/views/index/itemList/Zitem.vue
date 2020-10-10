@@ -212,7 +212,7 @@ export default {
       return newArr;
     },
     skuPropSelected(){
-      console.log(1);
+
     },
     async onBuyClicked(v){
       let abc =await http.post('http://10.9.65.210:8090/admin/cart/addCart',{
@@ -223,9 +223,9 @@ export default {
         num:v.selectedNum,
         goodinfo:this.result.pointsTip 
      })
-     console.log(abc)
+    //  console.log(abc)
       this.$router.push({path: '/cart'})
-      console.log(v)
+      // console.log(v)
     },
     confirm(v){
       this.address = v[0].name+v[1].name+v[2].name
@@ -245,7 +245,7 @@ export default {
        itemId:this.id
      })
      this.result = result.data
-     console.log(this.result)
+    //  console.log(this.result)
      this.images = Object.values(result.data.itemDetail)
      this.data = this.images.splice(0,1)[0]
     document.getElementById('wzt').innerHTML+=this.data

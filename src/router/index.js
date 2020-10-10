@@ -56,11 +56,6 @@ const routes = [{
         path: '/cart',
         name: 'cart',
         component: () => import('@v/index/cart/Zcart.vue'),
-        children: [{
-          path: '/cartList',
-          name: 'cartList',
-          component: () => import('@v/index/cart/ZcartList.vue')
-        }, ]
       },
       {
         path: '/Tpersonal',
@@ -228,6 +223,7 @@ const routes = [{
     name: 'addAddress',
     component: () => import( /* webpackChunkName:"addAddress" */ '@v/personal/GComRou/addAddress.vue')
   }
+
 
 
 

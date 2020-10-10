@@ -2,17 +2,11 @@
   <div class="t-itemListFloor" v-if="itemList.length">
     <header class="hd" v-if="frontName">
       <p class="desc">
-        <span>{{ frontName }} </span>
+        <span>{{frontName}} </span>
       </p>
     </header>
     <ul class="Tlist">
-      <router-link
-        tag="li"
-        :to="{ name: 'goodsDetails', query: { id: item.id } }"
-        class="item"
-        v-for="item in itemList"
-        :key="item.id"
-      >
+      <router-link tag="li" :to="{ name: 'goodsDetails', query: { id: item.id } }" class="item" v-for="item in itemList" :key="item.id">
         <div class="good">
           <div class="hd">
             <div class="wraper">
@@ -63,13 +57,18 @@
                 </div>
                 <div class="promContent">{{ item.promBanner.content }}</div>
               </div>
+
             </div>
 
+
             <div class="promBannerWrap" v-if="!item.promBanner">
-              <div class="desc" v-if="bool">
+              <div class="desc" >
                 {{ item.simpleDesc }}
               </div>
             </div>
+
+
+
           </div>
           <div class="tagWraper new">
             <span
@@ -104,12 +103,12 @@
 export default {
   props: ["itemList", "frontName"],
   data() {
-    return {
-      bool: true,
-    };
+    return {};
   },
   computed: {},
-  mounted() {},
+  mounted() {
+    
+  }
 };
 </script>
 

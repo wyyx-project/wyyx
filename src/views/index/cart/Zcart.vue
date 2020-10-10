@@ -22,7 +22,7 @@
         />
       </template>
     </van-swipe-cell>
-    <van-submit-bar :price="price" button-text="提交订单" @submit="onSubmit" />
+    <van-submit-bar class="van-hairline--top" :price="price" button-text="提交订单" @submit="onSubmit" />
   </div>
 </template>
 
@@ -57,12 +57,12 @@ export default {
     },
     async onload(){
       let result =await http.get('http://10.9.65.210:8090/admin/cart/showCart ',{})
-      console.log(result)
+      // console.log(result)
       this.result = result.data
       this.result.forEach(element => {
       let num = element.num-0
       let price1 = element.price-0
-      console.log(this.price += num*price1); 
+      this.price += num*price1 
     });
     }
   },
@@ -89,8 +89,6 @@ export default {
 .delete-button {
   height: 100%;
 }
-</style>
-<style>
 .custom-title {
   margin-right: 4px;
   vertical-align: middle;
@@ -101,4 +99,8 @@ export default {
   font-size: 12px;
   line-height: inherit;
 }
+</style>
+<style lang='stylus'>
+.van-hairline--top
+  bottom:.55rem
 </style>

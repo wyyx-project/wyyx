@@ -33,7 +33,7 @@ export default {
   methods:{
     handlerClick(a){
       let title = a.title
-      console.log(a)
+      // console.log(a)
       this.$router.push({path: '/goodslist', query:{title:a.title}})
     }
   },
