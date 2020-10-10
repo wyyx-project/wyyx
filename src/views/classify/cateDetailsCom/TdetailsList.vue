@@ -58,10 +58,17 @@
                 <div class="promContent">{{ item.promBanner.content }}</div>
               </div>
 
-              <div class="desc" v-if="!item.promBanner.valid">
+            </div>
+
+
+            <div class="promBannerWrap" v-if="!item.promBanner">
+              <div class="desc" >
                 {{ item.simpleDesc }}
               </div>
             </div>
+
+
+
           </div>
           <div class="tagWraper new">
             <span

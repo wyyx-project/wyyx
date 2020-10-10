@@ -69,14 +69,12 @@ export default {
       let listA = await http.get(
 "/api/xhr/rcmd/indexV2.json?type=2&size=22&lastItemId=0&categoryId=1013001"
       );
-      console.log(listA);
       listA.data.rcmdItemList.forEach((value) => {
         if (value.categoryItem) {
           if(value.categoryItem.comments[0]){
             this.listB.push(value);
           }
         }
-        console.log(this.listB);
       });
       // console.log(this.listB); 
       let page=Math.ceil(this.listB.length/this.limit)

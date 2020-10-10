@@ -69,16 +69,13 @@ export default {
       let listA = await http.get(
         "/api/xhr/rcmd/indexV2.json?type=0&size=20&lastItemId=0&categoryId=0"
       );
-      console.log(listA);
       listA.data.rcmdItemList.forEach((value) => {
         if (value.categoryItem) {
           if(value.categoryItem.comments[0]){
             this.listB.push(value);
           }
         }
-        console.log(this.listB);
       });
-      // console.log(this.listB); 
       let page=Math.ceil(this.listB.length/this.limit)
       // console.log(page);
       setTimeout(()=>{
