@@ -100,8 +100,13 @@ const routes = [{
     path: '/goodsDetails',
     name: 'goodsDetails',
     component: () => import('@v/index/itemList/Zitem.vue')
-  }
-
+  },
+  {
+    path: '/shopHot',
+    name: 'shopHot',
+    /* 魔法注释 路由懒加载*/
+    component: () => import(/* webpackChuckName: 'shop' */'@v/index/hotShop/shop.vue')
+  },
 
 
 ]

@@ -5,10 +5,12 @@
     <div id="most-popular" class="shop">
       <ul>
         <li v-for="m in shophot" :key="m.itemId">
-          <img :src="m.picUrl" />
-          <div class="shopfoot">
-            <div>{{ m.name }}</div>
-            <p id="shopfoots"><span>超值好货</span>￥{{ m.retailPrice }}</p>
+          <div class="shophots">
+            <img :src="m.picUrl" />
+            <div class="shopfoot">
+              <div>{{ m.name }}</div>
+              <p id="shopfoots"><span>超值好货</span>￥{{ m.retailPrice }}</p>
+            </div>
           </div>
         </li>
       </ul>
@@ -96,6 +98,9 @@ export default {
   }
 }
 
+.shophots{
+    
+  }
 .shopfoot {
   height: 0.84rem;
   background: #f7f7f7;

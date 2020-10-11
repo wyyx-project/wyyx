@@ -64,9 +64,9 @@ export default {
       console.log(this);
     }
   } */
-  mounted() {
+/*   mounted() {
     console.log(this.$route);
-  },
+  }, */
 };
 </script>
 

@@ -4,6 +4,13 @@
     <router-link to="/shopHome"
       ><van-nav-bar title="严选10W+ 爆款榜" left-arrow border:false
     /></router-link>
+    <van-pull-refresh v-model="refreshing" @refresh="onRefresh">
+      <van-list
+        v-model="loading"
+        @load="onLoad"
+        :finished="finished"
+        finished-text="我也是有底线的"
+      >
         <ul>
           <li class="shop" v-for="item in shopHotList" :key="item.itemId">
             <div class="shopImg">
@@ -23,6 +30,8 @@
             </div>
           </li>
         </ul>
+      </van-list>
+    </van-pull-refresh>
   </div>
 </template>
 
@@ -52,15 +61,46 @@ export default {
     this.size = 12;
     this.page = 1;
   },
-  async mounted() {
-    let result = await http.get("/api//xhr/index/hotStyleList.json", {
-      size: this.size,
-      page: this.page,
-    });
-    this.shopHotList = result.data.hotStyleItemList;
-    // console.log(this.shopHotList);
+  // async mounted() {
+  //   let result = await http.get("/api//xhr/index/hotStyleList.json", {
+  //     size: this.size,
+  //     page: this.page,
+  //   });
+  //   this.shopHotList = result.data.hotStyleItemList;
+  //   // console.log(this.shopHotList);
+  // },
+  methods: {
+    async loadData() {
+      // 表示用户下拉，需要将Page的页码重置为0, 同时清空list，不影响上拉加载
+      if (this.refreshing) {
+        this.shopHotList = [];
+        this.page = 1;
+      }
+
+      let result = await http.get("/api//xhr/index/hotStyleList.json", {
+        size: this.size, // pageSize: 每页多少条
+        page: this.size * this.page, // 分页的起始点
+      });
+      console.log(result);
+
+      this.shopHotList = [...this.shopHotList, ...result.data.hotStyleItemList];
+
+      this.loading = false;
+      this.refreshing = false;
+      this.page++;
+
+      if (this.page < result.data.pagination.totalPage) {
+        this.finished = true;
+      }
+    },
+    onLoad() {
+      this.loadData();
+    },
+
+    onRefresh() {
+      this.loadData();
+    },
   },
-    
 };
 </script>
 

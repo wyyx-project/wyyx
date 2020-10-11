@@ -9,7 +9,7 @@
         </router-link>
         <!-- 轮播图 -->
         <div class="swipes">
-          <home-swipe></home-swipe>
+          <swiper></swiper>
         </div>
       </div>
       <!-- 轮播图下的图片 -->
@@ -23,8 +23,6 @@
       </div>
       <list-title></list-title>
     </div>
-
-    <back-top></back-top>
     <footer>
       <tabBar @select-item="onClickTabBarItem" />
     </footer>
@@ -42,6 +40,7 @@ import homeShopHots from "./home/homeShopHots";
 import listTitle from "./comL/listTitle.vue";
 import tabBar from "@c/tabBar.vue";
 import backTop from "@c/backTop.vue";
+import swiper from "@c/swiper.vue";
 
 export default {
   components: {
@@ -53,6 +52,7 @@ export default {
     backTop,
     tabBar,
     listTitle,
+    swiper,
   },
   data() {
     return {
